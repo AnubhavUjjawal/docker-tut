@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload. Ok? LOL
+          Change from feature branch to be used to create a <code>pull request</code>
         </p>
         <a
           className="App-link"
