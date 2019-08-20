@@ -7,3 +7,18 @@ before_install:
 
 script:
   - docker run -e CI=true frontend npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-tut"
+  env: "DockerTut-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-030511875005"
+  # the folder inside the bucket we want to push zip file to. Essentially,
+  # keep it the same as `app`.
+  bucket_path: "docker-tut"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
